@@ -1,15 +1,16 @@
 {
   "name": "DownloadService",
   "platform": "HTML",
-  "version": "2.16",
-  "wabVersion": "2.16",
-  "author": "Esri R&D Center Beijing",
-  "description": "This widget demos how to create a widget by jQuery",
-  "copyright": "",
+  "version": "1.0",
+  "wabVersion": "1.0",
+  "author": "Fredys Barrera Artiaga <fredy.barrera.a@gmail.com>",
+  "description": "Widget que permite la descarga de capas desde arcgis online.",
+  "copyright": "Copyright © 2018 Esri. All Rights Reserved.",
   "license": "http://www.apache.org/licenses/LICENSE-2.0",
   "properties": {
     "hasConfig": true,
     "hasStyle": true,
-    "hasLocale": false
+    "hasLocale": false,
+    "hasSettingPage": false
   }
 }

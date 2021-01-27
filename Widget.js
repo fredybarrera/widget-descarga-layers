@@ -176,7 +176,9 @@ define([
           var deferred = new Deferred();
           var services = [];
           var res = {};
-          console.log('token: ', token);
+          var usuarios = this.config.usuarios
+          var capas = this.config.capas
+          var username = localStorage.getItem("username");
           let url = this.config.urlBase + this.config.layersFolder + '?token=' + token + '&f=json'
           this.getRequest(url).then(
             lang.hitch(this, function(response) { 
@@ -184,7 +186,22 @@ define([
               if (response.hasOwnProperty("services")){
                 console.log('response bien: ', response);
                 arrayUtils.forEach(response.services, function(f) {
-                  if(f.type === 'FeatureServer') { services.push(f); }
+                  if(f.type === 'FeatureServer') { 
+                    // Si el usuario no está en el listado
+                    if(usuarios.indexOf(username) === -1)
+                    {
+                      services.push(f); 
+                    }else{
+                      var name = f.name.replace("IDEMINAGRI/", "").replace("_VISOR_INSTI", "").replace("_MINIS_INSTI", "").replace("_VISOR_MINIS", "");
+                      // La capa no está en el listado
+                      if(capas.indexOf(name) === -1)
+                      {
+                        services.push(f); 
+                      }else{
+                        console.log(' f.name: ', f.name);
+                      }
+                    }
+                  }
                 }, this);
                 res.services = services
                 res.token = token
