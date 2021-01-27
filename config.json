@@ -1,0 +1,37 @@
+{
+  "urlBase": "https://gis.ingenieria.esri.cl/serversp/rest/services/",
+  "layersFolder": "CIREN",
+  "urlGeoproceso": "https://gis.ingenieria.esri.cl/serversp/rest/services/DescargaCapasV2/GPServer/Script/submitJob",
+  "urlJob": "https://gis.ingenieria.esri.cl/serversp/rest/services/DescargaCapasV2/GPServer/Script/jobs/",
+  "urlToken": "https://gis.ingenieria.esri.cl/portalsp/sharing/rest/generateToken",
+  "tokenReferer": "http://www.arcgis.com",
+  "urlPortal": "https://gis.ingenieria.esri.cl/portalsp",
+  "urlBase_": "https://esri.ciren.cl/server/rest/services/",
+  "layersFolder_": "IDEMINAGRI",
+  "urlGeoproceso_": "https://esri.ciren.cl/server/rest/services/IDEMINAGRI/WidgetDescarga/GPServer/Script/submitJob",
+  "urlJob_": "https://esri.ciren.cl/server/rest/services/IDEMINAGRI/WidgetDescarga/GPServer/Script/jobs/",
+  "urlToken_": "https://esri.ciren.cl/portal/sharing/rest/generateToken",
+  "tokenReferer_": "http://www.arcgis.com",
+  "urlPortal_": "https://esri.ciren.cl/portal",
+  "usuarios" : [
+    "minvu_luismeza",
+    "minvu_taniacorvalan",
+    "conadi_claudiapinilla",
+    "conadi_ivettelincoqueo",
+    "minvu_anakenaorrego",
+    "conadi_natalydiaz",
+    "minvu_rodolfobonilla",
+    "minvu_felipeyavar",
+    "minvu_luistobar",
+    "minvu_alejandrogutierrez",
+    "minvu_mariapaillaqueo"
+  ],
+  "capas": [
+    "AREAS_APTAS_RECUPERA_SUELOS",
+    "CATASTRO_FRUTICOLA",
+    "EROSION",
+    "PROPIEDADES_RURALES_IDE",
+    "SUELOS_AGROLOGICOS",
+    "USO_DE_LA_TIERRA_CIREN"
+  ]
+}

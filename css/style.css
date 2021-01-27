@@ -1,0 +1,140 @@
+
+div#_5_panel.jimu-panel.jimu-on-screen-widget-panel.jimu-main-background {
+  min-width: 580px !important;
+  min-height: 480px !important;
+}
+
+
+/* Style the buttons that are used to open and close the accordion-custom panel */
+.accordion-custom {
+  background-color: rgb(224, 220, 220);
+  color: rgb(54, 54, 54);
+  cursor: pointer;
+  padding: 13px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .accordion-custom:hover {
+  background-color: #ccc;
+}
+
+/* Style the accordion-custom panel. Note: hidden by default */
+.panel-custom {
+  padding: 10px 18px;
+  background-color: white;
+  display: none;
+  overflow: hidden;
+}
+
+.accordion-custom:after {
+  content: '\02795'; /* Unicode character for "plus" sign (+) */
+  font-size: 10px;
+  color: rgb(0, 0, 0);
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
+
+.layer-name-check {
+  margin-left: 5px;
+}
+
+.group-checkbox {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: .375rem .75rem;
+  margin-bottom: 0;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  text-align: center;
+  white-space: nowrap;
+  /* background-color: #e9ecef; */
+  /* border: 1px solid #ced4da; */
+  /* border-radius: .25rem; */
+}
+
+
+
+/*--------Accordion-------*/
+details {
+  /* border: 1px solid #aaa;
+  border-radius: 4px; */
+  padding: .75em .75em 0;
+  text-transform: lowercase;
+}
+
+summary {
+  /* font-weight: bold; */
+  margin: -.75em -.75em 0;
+  padding: .75em;
+  /* background-color: #485566; */
+  color: #495057;
+  font-size: 15px;
+}
+
+details[open] {
+  padding: .75em;
+  border: 1px solid #e8e8e8;
+  border-radius: 5px;
+}
+
+details[open] summary {
+  /* border-bottom: 1px solid #aaa; */
+  margin-bottom: .75em;
+}
+
+.label-layer {
+  display: inline-flex; 
+  margin-bottom: 5px; 
+  font-size: 13px; 
+  margin-left: 15px;
+  text-transform: lowercase;
+  color: #495057;
+}
+
+#link-descarga {
+  height: 40px;
+  margin-bottom: 5px;
+  margin-top: 10px;
+  text-align: center;
+  display: none;
+  font-size: 16px;
+}
+
+#opciones {
+  margin-top: 20px;
+}
+
+#login-active {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+#btn-descarga {
+  margin-bottom: 40px;
+  margin-top: 10px;
+}
+
+#listado-capas {
+  margin-top: 15px;
+}
+
+#lbl-usuario {
+  float: left; 
+  font-weight: bold; 
+  font-size: 13px;
+  margin-top: 10px;
+}

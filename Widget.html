@@ -1,0 +1,62 @@
+<div id="contenedor-download-service" class="container">
+  <div id="login-active"style="display: none;">
+    <label id="lbl-usuario"></label>
+    <button type="button" style="float: right;" class="btn btn-info btn-sm" data-dojo-attach-event="onclick:_onClickSalir" title="">Cambiar de usuario</button>
+  </div>
+  <div id="download-service-login">
+    <form action="">
+      <table class="table table-borderless">
+        <tr>
+          <td>
+            <label>Por favor, indica un nombre de usuario y contraseña para obtener las capas desde portal</label>
+          </td>
+        </tr>
+        <tr>
+          <td><input type="text" class="form-control" name="username" id="username" placeholder="Usuario"></td>
+        </tr>
+        <tr>
+          <td><input type="password" class="form-control" name="password" id="password" placeholder="Contraseña"></td>
+        </tr>
+        <tr>
+          <td><button type="button" id="btn-login-portal" class="btn btn-primary" data-dojo-attach-event="onclick:_onClickLoginPortal">Obtener capas</button></td>
+        </tr>
+      </table>
+    </form>
+  </div>
+   <div id="contenido" style="display: none;">
+    <div class="input-group">
+      <input type="text" id="search" autocomplete="off" class="form-control" data-dojo-attach-event="onkeyup:_search" placeholder="Buscar..."></input>
+      <button type="button" data-dojo-attach-event="onclick:_onClickClear" class="btn bg-transparent" style="margin-left: -40px; z-index: 100;" title="Limpiar búsqueda">x</button>
+  </div>
+    <div id="listado-capas"></div>
+    <div id="opciones">
+      <label>Formato salida</label>
+      <select class="form-control" name="format" id="format">
+        <option value="File Geodatabase">File Geodatabase</option>
+        <option value="Shape File">Shape File</option>
+      </select>
+      <br />
+      <label>Spacial reference</label>
+      <select class="form-control" name="sr" id="sr">
+        <option value="GCS_WGS_1984 4326">GCS_WGS_1984 wkid 4326</option>
+        <option value="WGS_1984_UTM_Zone_19S 32719">WGS_1984_UTM_Zone_19S wkid 32719</option>
+        <option value="WGS_1984_UTM_Zone_18S 32718">WGS_1984_UTM_Zone_18S wkid 32718</option>
+        <option value="WGS_1984_UTM_Zone_17S 32717">WGS_1984_UTM_Zone_17S wkid 32717</option>
+        <option value="WGS_1984_UTM_Zone_12S 32712">WGS_1984_UTM_Zone_12S wkid 32712</option>
+      </select>
+    </div>
+    <br />
+    <br />
+    <div id="link-descarga"></div>
+    <center>
+      <button type="button" id="btn-descarga" class="btn btn-primary btn-sm" data-dojo-attach-event="onclick:_onClickDownload" title="Iniciar proceso de descarga de las capas seleccionadas.">Obtener capas</button>
+    </center>
+  </div>
+  <div id="loading-contenido" style="margin-bottom: 15px; display: none;">
+    <div class="d-flex justify-content-center">
+      <div class="spinner-border" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+  </div>
+</div>
