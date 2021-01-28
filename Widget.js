@@ -21,7 +21,7 @@ define([
 	'esri/geometry/projection', 
 	'esri/geometry/coordinateFormatter', 
 	'jimu/dijit/Message',
-	'libs/jquery/jquery',
+	'./js/jquery/jquery',
 	'esri/layers/GraphicsLayer',
 	"dojo/_base/array",
 	],function (
