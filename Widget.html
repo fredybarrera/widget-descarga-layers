@@ -1,7 +1,12 @@
 <div id="contenedor-download-service" class="container">
   <div id="login-active"style="display: none;">
-    <label id="lbl-usuario"></label>
-    <button type="button" style="float: right;" class="btn btn-info btn-sm" data-dojo-attach-event="onclick:_onClickSalir" title="">Cambiar de usuario</button>
+    <label id="lbl-usuario" class="col-md-8 float-md-left"></label>
+    <div class="float-md-right">
+      <button type="button" class="btn btn-info btn-sm" data-dojo-attach-event="onclick:_onClickSalir" title="">Cerrar</button>
+    </div>
+    <div class="col-md-4">
+      <a href="https://ide.minagri.gob.cl/geoweb/wp-content/uploads/DOC/Descripcion_BBDD_2020-Mayo.pdf" target="_blank" rel="noopener noreferrer">Descripción</a>
+    </div>
   </div>
   <div id="download-service-login">
     <form action="">
@@ -30,13 +35,13 @@
   </div>
     <div id="listado-capas"></div>
     <div id="opciones">
-      <label>Formato salida</label>
+      <label>Formato de salida</label>
       <select class="form-control" name="format" id="format">
         <option value="File Geodatabase">File Geodatabase</option>
         <option value="Shape File">Shape File</option>
       </select>
       <br />
-      <label>Spacial reference</label>
+      <label>Sistema de referencia</label>
       <select class="form-control" name="sr" id="sr">
         <option value="GCS_WGS_1984 4326">GCS_WGS_1984 wkid 4326</option>
         <option value="WGS_1984_UTM_Zone_19S 32719">WGS_1984_UTM_Zone_19S wkid 32719</option>

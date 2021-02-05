@@ -1,4 +1,4 @@
-@import url('./bootstrap.min.css');
+@import url('./bootstrap.css');
 
 div#_5_panel.jimu-panel.jimu-on-screen-widget-panel.jimu-main-background {
   min-width: 580px !important;
@@ -121,7 +121,8 @@ details[open] summary {
 #login-active {
   display: inline-block;
   width: 100%;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+  margin-top: 10px;
 }
 
 #btn-descarga {
@@ -134,8 +135,7 @@ details[open] summary {
 }
 
 #lbl-usuario {
-  float: left; 
   font-weight: bold; 
   font-size: 13px;
-  margin-top: 10px;
+  margin-top: 5px;
 }

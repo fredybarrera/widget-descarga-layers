@@ -187,18 +187,21 @@ define([
                 console.log('response bien: ', response);
                 arrayUtils.forEach(response.services, function(f) {
                   if(f.type === 'FeatureServer') { 
-                    // Si el usuario no está en el listado
-                    if(usuarios.indexOf(username) === -1)
-                    {
-                      services.push(f); 
-                    }else{
-                      var name = f.name.replace("IDEMINAGRI/", "").replace("_VISOR_INSTI", "").replace("_MINIS_INSTI", "").replace("_VISOR_MINIS", "");
-                      // La capa no está en el listado
-                      if(capas.indexOf(name) === -1)
+                    // No se muestrar las capas que tienen como texto "_DESCARGA"
+                    if(f.name.search("_DESCARGA") === -1) {
+                      // Si el usuario no está en el listado
+                      if(usuarios.indexOf(username) === -1)
                       {
                         services.push(f); 
                       }else{
-                        console.log(' f.name: ', f.name);
+                        var name = f.name.replace("IDEMINAGRI/", "").replace("_VISOR_INSTI", "").replace("_MINIS_INSTI", "").replace("_VISOR_MINIS", "");
+                        // La capa no está en el listado
+                        if(capas.indexOf(name) === -1)
+                        {
+                          services.push(f); 
+                        }else{
+                          console.log(' f.name: ', f.name);
+                        }
                       }
                     }
                   }
@@ -278,6 +281,7 @@ define([
             var sr = $('#sr option:selected').val();
             var username = localStorage.getItem("username");
             var password = localStorage.getItem("password");
+            var token = localStorage.getItem("usertoken");
 
             let params = {
               'f': 'json',
@@ -287,7 +291,8 @@ define([
               'username': username,
               'password': password,
               'spatialreference': sr,
-              'Url_Portal': config.urlPortal
+              'Url_Portal': config.urlPortal,
+              'token': token
             };
 
             let query = Object.keys(params)
@@ -310,7 +315,8 @@ define([
                     console.log('preventCache: ', preventCache);
                     var params = {
                       'f': 'json',
-                      'dojo.preventCache': preventCache
+                      'dojo.preventCache': preventCache,
+                      'token': token
                     };
   
                     var query = Object.keys(params)
@@ -332,7 +338,8 @@ define([
                           let params = {
                             'f': 'json',
                             'returnType': 'data',
-                            'dojo.preventCache': Date.now()
+                            'dojo.preventCache': Date.now(),
+                            'token': token
                           };
 
                           let query = Object.keys(params)
@@ -378,7 +385,8 @@ define([
 
                 }else{
                   $("#loading-contenido").hide();
-                  this.showMessage('Hubo un error al intentar descargar la(s) capa(s)', 'error')
+                  this.showMessage('Hubo un error al intentar descargar la(s) capa(s):<br/><b>' + response.error.message + '</b>', 'error')
+                  $("#btn-descarga").show();
                 }
               }),
               function(objErr) {
@@ -455,7 +463,7 @@ define([
             // 60: 1 hora
             // 1440: 1 dia
             // 20160: 2 semanas
-            formData.append('expiration', 20160);
+            formData.append('expiration', 60);
 
             console.log('formData: ', formData);
 
